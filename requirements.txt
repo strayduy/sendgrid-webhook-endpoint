@@ -7,4 +7,5 @@ Werkzeug==0.9.4
 gunicorn==18.0
 itsdangerous==0.24
 newrelic==2.18.1.15
+pymongo==2.7
 wsgiref==0.1.2
