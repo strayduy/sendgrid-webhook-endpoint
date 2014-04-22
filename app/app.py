@@ -5,6 +5,7 @@ from flask_sslify import SSLify
 
 # Our libs
 from .blueprints import webhook
+from .database import EventsDB
 
 def create_app(config_object):
     app = Flask(__name__)
@@ -18,6 +19,8 @@ def create_app(config_object):
 def register_extensions(app):
     basic_auth = BasicAuth(app)
     sslify = SSLify(app)
+
+    EventsDB.init(app.config)
 
 def register_blueprints(app):
     app.register_blueprint(webhook.blueprint)
